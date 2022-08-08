@@ -74,13 +74,34 @@ I proxied the connect to my local machine via kubectl port-forward
 kubectl port-forward --namespace neuvector service/neuvector-service-webui 8443
 ```
 
-Now I can access the Web UI from ```https://localhost:8443```
+Now I can access the Web UI from ```https://localhost:8443``` <br/>
 Tip: Make sure your request is for ```https``` and not ```http```.
 
 ## Step 5: Using NeuVector:
 The default username is ```admin``` and default password is ```admin``` <br/>
+However, the controller is not working - so I cannot log into the web UI yet.
+
+<img width="1030" alt="Screenshot 2022-08-08 at 14 03 34" src="https://user-images.githubusercontent.com/109959738/183424557-a29d0f4a-a7cc-4fad-a453-6b048f3d7eea.png">
+
+Check the health of the controller pods in the ```neuvector``` network namespace:
+
+```
+kubectl get pods -A
+```
+
+<img width="756" alt="Screenshot 2022-08-08 at 14 06 41" src="https://user-images.githubusercontent.com/109959738/183424990-3cf68004-a4fc-4c50-9de4-45d12f45ee7f.png">
+
+Describing the pod in the ```CrashLoopBackOff``` state informs us of...
+
+```
+kubectl describe pod neuvector-controller-pod-54c588dc6c-wvgf4 -n neuvector
+```
+
+<img width="1155" alt="Screenshot 2022-08-08 at 14 12 00" src="https://user-images.githubusercontent.com/109959738/183425993-9494c948-a212-4397-8e0f-2c4f61354538.png">
+
+
+## Step 6: End User License Agreements
 
 Accept the license agreement, and you're off to the races! Happy NeuVectoring! <br/>
-
 We will cover the process of locking down and securing our environment in future articles.
 
