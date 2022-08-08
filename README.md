@@ -53,6 +53,12 @@ helm upgrade --install neuvector neuvector/core --version 2.2.0 \
 
 <img width="874" alt="Screenshot 2022-08-08 at 13 55 02" src="https://user-images.githubusercontent.com/109959738/183422957-e612a209-b1e0-4cae-9840-9ff6e8320ee5.png">
 
+All newly-installed components of Neuvector should show-up in the Rancher Desktop UI:
+
+
+<img width="1047" alt="Screenshot 2022-08-08 at 14 15 13" src="https://user-images.githubusercontent.com/109959738/183426856-e51da609-9542-4a94-820d-5fd4ce5e8977.png">
+
+
 Run the commands provided to print the nodeport location of the NeuVector controller
 
 ```
